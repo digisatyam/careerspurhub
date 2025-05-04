@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Spur Hub - Your One Stop Career Solution in Mumbai</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- Color Variables (Optional but good practice) --- */
+        :root {
+            --primary-blue: #3498db;
+            --primary-blue-darker: #2980b9;
+            --primary-orange: #f39c12; /* New Orange Color */
+            --primary-orange-darker: #e67e22; /* Darker Orange for Hover */
+            --dark-blue: #2c3e50;
+            --text-dark: #333;
+            --text-light: #555;
+            --light-gray: #ecf0f1;
+            --very-light-gray: #f9f9f9;
+            --white: #ffffff;
+            --whatsapp-green: #25D366;
+            --whatsapp-green-darker: #1DAE50;
+        }
+
+        /* --- Global Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--very-light-gray);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+         h2::after { /* Underline effect for section titles - NOW ORANGE */
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-orange); /* Changed to Orange */
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-blue); /* Keep links blue for now, or change if desired */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn { /* Main Button Style - NOW ORANGE */
+            display: inline-block;
+            background-color: var(--primary-orange); /* Changed to Orange */
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-orange-darker); /* Darker Orange on Hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Keep WhatsApp button specific styling */
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-green-darker);
+        }
+
+        /* --- Header & Navigation --- */
+        .navbar {
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .navbar .logo span { /* "Spur" part of logo - NOW ORANGE */
+             color: var(--primary-orange); /* Changed to Orange */
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 25px;
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding-bottom: 5px;
+            position: relative;
+        }
+
+         .navbar .nav-links a::after { /* Underline on hover - Keep blue or change to orange? Let's keep blue for nav */
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover,
+        .navbar .nav-links a.active {
+            color: var(--primary-blue); /* Keep nav hover/active blue */
+        }
+
+         .navbar .nav-links a:hover::after,
+         .navbar .nav-links a.active::after {
+            width: 100%;
+        }
+
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+             /* UPDATED BACKGROUND IMAGE URL and OVERLAY */
+            background: linear-gradient(rgba(44, 62, 80, 0.65), rgba(44, 62, 80, 0.75)), /* Slightly reduced opacity */
+                        url('https://img.freepik.com/free-photo/business-job-interview-concept_1421-77.jpg?t=st=1744037849~exp=1744041449~hmac=8b1eef3ce479a3254d3d781d82a811e4e9279b064f412a310c2172b9f559e634&w=996') no-repeat center center/cover; /* Example: Replace with your preferred interview/office background image */
+            color: var(--white);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            font-weight: 700;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #eee; /* Keep light color for contrast */
+            font-weight: 300;
+             animation: fadeInUp 1s ease-out 0.5s;
+             animation-fill-mode: backwards;
+        }
+
+        #hero .cta-buttons {
+             animation: fadeInUp 1s ease-out 1s;
+             animation-fill-mode: backwards;
+        }
+
+        #hero .cta-buttons .btn { /* Main hero button is already orange via .btn */
+            margin: 5px 10px; /* Add slight margin adjustment for stacking */
+            padding: 15px 35px;
+            font-size: 1.1rem;
+        }
+         /* Ensure WhatsApp button keeps its style */
+         #hero .cta-buttons .btn-whatsapp {
+             background-color: var(--whatsapp-green);
+         }
+         #hero .cta-buttons .btn-whatsapp:hover {
+             background-color: var(--whatsapp-green-darker);
+         }
+
+
+        /* --- About Us Section --- */
+        #about {
+            background-color: var(--white);
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+         .about-content .text {
+            flex: 1;
+        }
+         .about-content .image {
+            flex: 1;
+            text-align: center;
+        }
+         .about-content img {
+             max-width: 400px;
+             border-radius: 10px;
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+         }
+
+
+        /* --- Services Section --- */
+        #services {
+            background-color: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--primary-blue); /* Keep service icons blue, or change to orange if preferred */
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* --- Why Choose Us Section --- */
+        #why-choose-us {
+             background-color: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .why-item .icon { /* Why Choose Us icons - NOW ORANGE */
+            font-size: 2.5rem;
+            color: var(--primary-orange); /* Changed to Orange */
+            margin-bottom: 10px;
+        }
+
+        .why-item h3 {
+            font-size: 1.3rem;
+             color: var(--dark-blue);
+        }
+
+         .why-item p {
+             font-size: 0.9rem;
+             color: var(--text-light);
+         }
+
+        /* --- Jobs Section --- */
+        #jobs {
+             background-color: #f1f8fc; /* Very Light Blue - Keep or change? */
+             text-align: center;
+        }
+
+        #jobs p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        /* Jobs section buttons already inherit .btn (Orange) and .btn-whatsapp (Green) styles */
+
+
+        /* --- Testimonials Section --- */
+        #testimonials {
+             background-color: var(--white);
+             padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background-color: var(--very-light-gray);
+            border-left: 5px solid var(--primary-orange); /* Accent border - NOW ORANGE */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-card .quote::before { /* Quote icon - NOW ORANGE */
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-size: 1.2rem;
+            color: var(--primary-orange); /* Changed to Orange */
+            opacity: 0.8;
+        }
+
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--dark-blue);
+            text-align: right;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        /* --- FAQ Section --- */
+        #faq {
+            background-color: var(--light-gray);
+        }
+
+        .faq-accordion {
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-blue);
+             border-bottom: 1px solid #eee;
+        }
+         .faq-question.active {
+             background-color: #f8f8f8; /* Keep light background on active question */
+         }
+
+
+        .faq-question i { /* FAQ toggle icon - NOW ORANGE */
+            transition: transform 0.3s ease;
+            color: var(--primary-orange); /* Changed to Orange */
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            background-color: var(--white);
+        }
+
+        .faq-answer p {
+            padding: 0 20px;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-answer p {
+             padding: 20px;
+        }
+
+
+        /* --- Contact Section --- */
+        #contact {
+             background-color: var(--dark-blue);
+             color: var(--white);
+             padding-bottom: 40px; /* Reduced padding slightly */
+             padding-top: 80px; /* Ensure consistent top padding */
+        }
+
+        #contact h2 {
+            color: var(--white);
+            margin-bottom: 20px; /* Adjusted margin */
+        }
+        #contact h2::after {
+            background-color: var(--primary-orange); /* Changed to Orange */
+        }
+
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 30px; /* Adjusted margin */
+        }
+
+        /* NEW: Social Media Icons Styling */
+        .social-media-icons {
+            width: 100%; /* Take full width to center content */
+            text-align: center;
+            margin-bottom: 30px; /* Space below icons */
+        }
+
+        .social-media-icons h3 { /* Optional heading */
+            color: var(--light-gray);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .social-media-icons a {
+            display: inline-block;
+            color: var(--light-gray); /* Icon color */
+            font-size: 1.8rem; /* Icon size */
+            margin: 0 12px; /* Space between icons */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-media-icons a:hover {
+            color: var(--primary-orange); /* Hover color */
+            transform: translateY(-3px); /* Slight lift effect */
+        }
+        /* END NEW Social Media Styles */
+
+        .contact-info, .contact-address {
+            flex-basis: 45%;
+            min-width: 280px;
+        }
+
+
+        .contact-info h3, .contact-address h3 {
+            color: var(--light-gray);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .contact-info p, .contact-address p {
+             margin-bottom: 10px;
+             color: #bdc3c7;
+             line-height: 1.8;
+        }
+
+        .contact-info i, .contact-address i { /* Contact icons - NOW ORANGE */
+             color: var(--primary-orange); /* Changed to Orange */
+             margin-right: 10px;
+             width: 20px;
+             text-align: center;
+        }
+
+         .contact-info a {
+            color: var(--light-gray); /* Keep link text light */
+            transition: color 0.3s ease;
+         }
+         .contact-info a:hover {
+            color: var(--primary-orange); /* Hover color to orange */
+         }
+         /* Contact buttons inherit global styles */
+
+
+        /* --- Footer --- */
+        footer {
+            background-color: #232f3e;
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+         /* Fade-in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h2 { font-size: 2.2rem; }
+            #hero h1 { font-size: 3rem; }
+            #hero p { font-size: 1.1rem; }
+            .about-content { flex-direction: column; text-align: center;}
+            .about-content .image { margin-top: 30px;}
+            .about-content img { max-width: 80%; }
+             .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        }
+
+
+        @media (max-width: 768px) {
+             h2 { font-size: 2rem; }
+             section { padding: 60px 0; }
+
+            .navbar .container {
+                padding: 0 15px;
+            }
+
+            .navbar .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 10px 0;
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .navbar .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+             .navbar .nav-links a::after { display: none; }
+
+
+            .menu-toggle {
+                display: block;
+            }
+
+            #hero { height: auto; padding: 120px 0 60px 0; }
+            #hero h1 { font-size: 2.5rem; }
+             #hero p { font-size: 1rem; }
+             #hero .cta-buttons .btn { padding: 12px 25px; font-size: 1rem; margin-bottom: 10px;} /* Stack buttons */
+
+             .services-grid { grid-template-columns: 1fr; }
+             .why-grid { grid-template-columns: 1fr; }
+             .testimonials-grid { grid-template-columns: 1fr; }
+
+
+             .contact-content { flex-direction: column; align-items: center; }
+             /* Ensure social icons stack properly */
+             .social-media-icons { margin-bottom: 20px; /* Adjust spacing for mobile */ }
+             .contact-info, .contact-address { flex-basis: 100%; max-width: 400px; margin-top: 0; /* Reset top margin if any */ }
+             .contact-address { margin-top: 20px; /* Add space between info and address when stacked */ }
+             #contact { padding-bottom: 30px; } /* Adjust padding if needed */
+        }
+
+        @media (max-width: 480px) {
+            h2 { font-size: 1.8rem; }
+            #hero h1 { font-size: 2rem; }
+            .navbar .logo { font-size: 1.5rem; }
+            .btn { padding: 10px 20px; font-size: 0.9rem; }
+            #hero .cta-buttons .btn { padding: 12px 25px; font-size: 1rem;}
+            .service-card { padding: 20px; }
+            .testimonial-card { padding: 20px; }
+            .faq-question { font-size: 0.95rem; padding: 12px 15px; }
+            .faq-answer p { font-size: 0.9rem; padding: 15px !important; }
+            .social-media-icons a { font-size: 1.6rem; margin: 0 10px; } /* Slightly smaller icons on small screens */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Career<span>Spur</span> Hub</a>
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                 <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content container">
+            <h1>Find Your Dream Job in Mumbai with Career Spur Hub</h1>
+            <p>Your One Stop Solution for career opportunities across all fields in the vibrant city of Mumbai.</p>
+            <div class="cta-buttons">
+                <a href="#jobs" class="btn">Explore Openings</a> <!-- This will be orange -->
+                <a href="https://wa.me/917738030503?text=Hello%20Career%20Spur%20Hub,%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20send%20my%20resume." class="btn btn-whatsapp" target="_blank"> <!-- This will be green -->
+                    <i class="fab fa-whatsapp"></i> WhatsApp Your Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="fade-in">
+        <div class="container">
+            <h2>About Career Spur Hub</h2>
+            <div class="about-content">
+                 <div class="text">
+                    <h3>Your Trusted Partner in Career Growth</h3>
+                    <p>Career Spur Hub is a premier recruitment agency based in Mumbai, dedicated to connecting talented individuals with the right opportunities across all industries. We understand the dynamic job market of Mumbai and strive to be the bridge between ambitious job seekers and leading companies.</p>
+                    <p>Our mission is to provide comprehensive career solutions, from identifying job openings to preparing candidates for success. We believe in personalized service and building long-term relationships with both candidates and clients.</p>
+                     <p><strong>Tagline:</strong> Career One Stop Solution</p>
+                </div>
+                 <div class="image">
+                    <img src="https://img.freepik.com/free-photo/business-situation-job-interview-concept-job-seeker-present-resume-managers_1421-78.jpg?t=st=1744038244~exp=1744041844~hmac=66834f101683d733f90234779f3be856111814d4819776f3a801de524690c487&w=996" alt="Career Spur Hub Team Meeting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="fade-in">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <!-- Service 1: Job Placement -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Job Placement</h3>
+                    <p>Connecting you with diverse job opportunities across all sectors in Mumbai.</p>
+                </div>
+                <!-- Service 2: Training -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Skill Training</h3>
+                    <p>Industry-relevant training programs to enhance your employability.</p>
+                </div>
+                <!-- Service 3: Mock Interviews -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Mock Interviews</h3>
+                    <p>Practice and feedback sessions to help you ace your interviews.</p>
+                </div>
+                <!-- Service 4: Career Counselling -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-comments"></i></div>
+                    <h3>Career Counselling</h3>
+                    <p>Expert guidance to help you navigate your career path effectively.</p>
+                </div>
+                <!-- Service 5: Interview Screening -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <h3>Interview Screening</h3>
+                    <p>We help companies screen candidates effectively, saving time and resources.</p>
+                </div>
+                <!-- Service 6: ATS Friendly Resume -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>ATS Friendly Resume</h3>
+                    <p>Crafting professional resumes optimized for Applicant Tracking Systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="fade-in">
+        <div class="container">
+            <h2>Why Partner with Us?</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Mumbai Focused</h3>
+                    <p>Deep understanding of the Mumbai job market across all fields.</p>
+                </div>
+                <div class="why-item">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h3>Expert Team</h3>
+                    <p>Experienced recruiters dedicated to your career success.</p>
+                </div>
+                <div class="why-item">
+                    <div class="icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Personalized Approach</h3>
+                    <p>Tailored solutions to meet individual candidate and client needs.</p>
+                </div>
+                <div class="why-item">
+                    <div class="icon"><i class="fas fa-cogs"></i></div>
+                    <h3>One Stop Solution</h3>
+                    <p>Comprehensive services from resume building to job placement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Testimonials Section -->
+    <section id="testimonials" class="fade-in">
+        <div class="container">
+            <h2>What Our Candidates Say</h2>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p class="quote">"Career Spur Hub was incredibly helpful! They understood exactly what I was looking for and connected me with a fantastic marketing role in Bandra much faster than I expected. Highly recommended!"</p>
+                    <p class="author">- Priya Sharma, Marketing Manager</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p class="quote">"As a fresher, I was nervous about job hunting. The team provided excellent career counselling and mock interview sessions that boosted my confidence. Landed my first IT job in Thane thanks to them!"</p>
+                    <p class="author">- Rohan Desai, Software Engineer Trainee</p>
+                </div>
+                 <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p class="quote">"The ATS-friendly resume service made a huge difference. I started getting more interview calls almost immediately after updating my CV with their help. Professional and efficient service."</p>
+                    <p class="author">- Aisha Khan, HR Executive</p>
+                </div>
+                 <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <p class="quote">"Finding a senior-level finance position in Mumbai seemed challenging, but Career Spur Hub had excellent connections. They facilitated the entire process smoothly. Great network!"</p>
+                    <p class="author">- Vikram Patel, Finance Controller</p>
+                </div>
+                 <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <p class="quote">"I appreciated their transparent communication and prompt follow-ups. They genuinely care about finding the right fit for both the candidate and the company. Found a great operations role in Goregaon."</p>
+                    <p class="author">- Sneha Reddy, Operations Head</p>
+                </div>
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <p class="quote">"The skill training suggestion was spot on! It helped me pivot my career into a new domain. Their guidance extended beyond just job placement, which was invaluable."</p>
+                    <p class="author">- Arjun Mehta, Data Analyst</p>
+                </div>
+                 <!-- Testimonial 7 -->
+                <div class="testimonial-card">
+                    <p class="quote">"Sent my resume via WhatsApp and got a call back the next day! The process was quick and straightforward. They have openings across various fields, which is great."</p>
+                    <p class="author">- Neha Singh, Sales Representative</p>
+                </div>
+                 <!-- Testimonial 8 -->
+                <div class="testimonial-card">
+                    <p class="quote">"Career Spur Hub helped me relocate to Mumbai for a job. They understood the logistics involved and connected me with an employer who offered relocation support. Excellent service!"</p>
+                    <p class="author">- Deepak Verma, Project Manager</p>
+                </div>
+                 <!-- Testimonial 9 -->
+                <div class="testimonial-card">
+                    <p class="quote">"The mock interviews were tough but fair. The feedback I received was constructive and helped me improve my answers significantly. Felt much more prepared for the real interviews."</p>
+                    <p class="author">- Fatima Ansari, Graphic Designer</p>
+                </div>
+                 <!-- Testimonial 10 -->
+                <div class="testimonial-card">
+                    <p class="quote">"Their understanding of the Mumbai job market is impressive. They found me a niche role in Navi Mumbai that wasn't widely advertised. Truly a one-stop solution for career needs."</p>
+                    <p class="author">- Sameer Joshi, Supply Chain Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section id="jobs" class="fade-in">
+        <div class="container">
+            <h2>Latest Job Openings</h2>
+            <p>Explore exciting career opportunities available right now across various industries in Mumbai. We regularly update our listings. Get in touch to find the perfect match for your skills and aspirations.</p>
+            <a href="#contact" class="btn">Contact Us for Openings</a> <!-- Orange -->
+             <a href="https://wa.me/917738030503?text=Hello%20Career%20Spur%20Hub,%20I'm%20looking%20for%20job%20opportunities%20in%20Mumbai." class="btn btn-whatsapp" target="_blank"> <!-- Green -->
+                 <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="fade-in">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What kind of jobs do you offer?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We cater to job openings across *all fields* and industries within Mumbai. This includes IT, Finance, Marketing, Sales, HR, Operations, Manufacturing, Healthcare, Hospitality, and many more, covering entry-level to senior management positions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there any fee for job seekers?
+                         <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, Career Spur Hub does not charge any fees from candidates for job placement services. Our revenue comes from the companies (our clients) who hire candidates through us.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        How can I apply for a job?
+                         <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can start by sending your resume to us via WhatsApp using the button on our page, or by emailing it to careerspurhubjob@gmail.com. You can also contact us directly to discuss current openings relevant to your profile.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        Do you only operate in Mumbai?
+                         <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our primary focus is on recruitment for job roles located within the Mumbai Metropolitan Region (MMR).</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        What makes your resume service "ATS Friendly"?
+                         <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Many companies use Applicant Tracking Systems (ATS) to filter resumes. Our service ensures your resume is formatted correctly, uses relevant keywords, and has a structure that these systems can easily parse, increasing your chances of getting noticed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+
+                <!-- NEW: Social Media Icons -->
+                <div class="social-media-icons">
+                     <!-- Optional: You can add a heading like this -->
+                     <!-- <h3>Connect with Us</h3> -->
+                    <a href="https://example.com" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/careerspur/" target="_blank" aria-label="Visit our Instagram profile"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/career-spur-hub-3888b7288/" target="_blank" aria-label="Visit our LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <!-- END NEW: Social Media Icons -->
+
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+917738030503">+91 77380 30503</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:careerspurhubjob@gmail.com">careerspurhubjob@gmail.com</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/917738030503?text=Hello%20Career%20Spur%20Hub,%20I%20have%20a%20query." target="_blank">Chat with us on WhatsApp</a></p>
+                     <p>Reach out for job inquiries, collaborations, or any questions you may have.</p>
+                     <a href="https://wa.me/917738030503?text=Hello%20Career%20Spur%20Hub,%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20send%20my%20resume." class="btn btn-whatsapp" target="_blank" style="margin-top: 15px;"> <!-- Green -->
+                        <i class="fab fa-whatsapp"></i> WhatsApp Your Resume
+                    </a>
+                </div>
+                 <div class="contact-address">
+                    <h3>Our Address</h3>
+                     <p><i class="fas fa-map-marker-alt"></i> M/s Career Spur hub<br>
+                        Summit Apartment,<br>
+                        Royal Palms Estate, Aarey Colony,<br>
+                        Goregaon East, Mumbai - 400065,<br>
+                        Maharashtra, India.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Career Spur Hub. All Rights Reserved. | Your One Stop Career Solution in Mumbai.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // --- Close Mobile Menu When a Link is Clicked ---
+        const allNavLinks = document.querySelectorAll('.nav-links a');
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // --- FAQ Accordion ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = question.querySelector('i');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                // Close all others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-question').classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+                        otherItem.querySelector('.faq-answer').style.paddingTop = '0';
+                        otherItem.querySelector('.faq-answer').style.paddingBottom = '0';
+                        otherItem.querySelector('.faq-question i').style.transform = 'rotate(0deg)';
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('active');
+                question.classList.toggle('active');
+                if (!isActive) {
+                    // Adjust padding before setting max-height for smoother transition
+                    answer.style.paddingTop = '20px';
+                    answer.style.paddingBottom = '20px';
+                    answer.style.maxHeight = answer.scrollHeight + 'px'; // Use scrollHeight
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    answer.style.maxHeight = '0';
+                    // Apply padding removal after transition ends (optional refinement)
+                    answer.addEventListener('transitionend', () => {
+                        if (!item.classList.contains('active')) {
+                            answer.style.paddingTop = '0';
+                            answer.style.paddingBottom = '0';
+                        }
+                    }, { once: true });
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+
+       // --- Smooth Scrolling & Active Nav Link Highlighting ---
+        const sections = document.querySelectorAll('section[id]');
+        const navHeaderLinks = document.querySelectorAll('.navbar .nav-links a');
+        const navbar = document.querySelector('.navbar');
+        let navbarHeight = navbar ? navbar.offsetHeight : 70; // Default height if navbar not found initially
+
+        // Recalculate navbar height on resize potentially
+         window.addEventListener('resize', () => {
+              navbarHeight = navbar ? navbar.offsetHeight : 70;
+         });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navbarHeight - 20; // Add a buffer
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                // Check if the scroll position is within the section's bounds
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = sectionId;
+                }
+            });
+
+            // Special case for reaching the bottom of the page
+             const bottomOfPage = document.documentElement.scrollHeight - window.innerHeight - 50; // Small buffer from bottom
+             if(scrollY >= bottomOfPage && sections.length > 0) {
+                 // Check if contact section is the last one
+                 if (sections[sections.length - 1].getAttribute('id') === 'contact') {
+                     current = 'contact';
+                 }
+             }
+
+            navHeaderLinks.forEach(link => {
+                link.classList.remove('active');
+                 const linkHref = link.getAttribute('href');
+                // Highlight the link corresponding to the current section
+                if (linkHref === `#${current}`) {
+                    link.classList.add('active');
+                } else if (!current && scrollY < (sections[0]?.offsetTop - navbarHeight - 20 || 50) && linkHref === '#hero') {
+                    // Highlight hero only if scrolled near the top and no other section is active
+                     link.classList.add('active');
+                 }
+            });
+        });
+
+        // --- Fade-in Elements on Scroll ---
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 }; // Trigger when 10% visible
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        };
+        const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+        fadeInElements.forEach(el => { scrollObserver.observe(el); });
+
+    </script>
+
+</body>
+</html>
